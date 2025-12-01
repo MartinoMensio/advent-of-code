@@ -1,15 +1,22 @@
-[tool.poetry]
-name = "advent-of-code-2024"
+[project]
+name = "advent-of-code"
 version = "0.1.0"
 description = ""
-authors = ["Martino Mensio <martino.mensio@tno.nl>"]
+authors = [
+{name="Martino Mensio", email="martino.mensio@tno.nl"}
+]
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.10"
-requests = "^2.32.3"
-
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.32.3",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "black>=25.9.0",
+    "isort>=6.0.1",
+]
